@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejercicio 3</title>
+  </head>
+
+  <body>
+    <div>
+      <div>
+        <h2>Resultado: <span class="resultado"></span></h2>
+
+        <div>
+          <div>
+            <div>
+              <label for="">Valor 1</label>
+              <input id="valor1" type="text" />
+              <span class="errorValor1"></span>
+            </div>
+            <div>
+              <label for="">Valor 2</label>
+              <input id="valor2" type="text" />
+              <span class="errorValor2"></span>
+            </div>
+            <div style="display: flex">
+              <button id="btn-sumar" type="button">Sumar</button>
+              <button id="btn-restar" type="button">Restar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      //Sumar
+      var suma = document.getElementById("btn-sumar");
+      suma.addEventListener("click", function () {
+        var valor1 = document.querySelector("#valor1");
+        var valor2 = document.querySelector("#valor2");
+        var respSuma = parseInt(valor1.value) + parseInt(valor2.value);
+        document.querySelector(".resultado").innerHTML =
+          "La suma de ambos valores es " + respSuma;
+      });
+
+    
+
+      //Restar
+      var resta = document.getElementById("btn-restar");
+      resta.addEventListener("click", function () {
+        var valor1 = document.querySelector("#valor1");
+        var valor2 = document.querySelector("#valor2");
+        document.querySelector(".resultado").innerHTML =
+          "La resta de ambos valores es " + respResta();
+
+        function respResta() {
+          if (parseInt(valor1.value) - parseInt(valor2.value) < 0) {
+            return 0;
+          }
+          return parseInt(valor1.value) + parseInt(valor2.value);
+        }
+      });
+    </script>
+  </body>
+</html>
